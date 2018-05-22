@@ -10,7 +10,7 @@ public class Welcome : EditorWindow
     [MenuItem("Welcome/Hello Player")]
     public static void ShowWindow()
     {
-        GetWindow<Welcome>(false, "Welcome", true);
+		GetWindow<Welcome>("Welcome", true);
     }
 
     private void OnFocus()
@@ -26,10 +26,8 @@ public class Welcome : EditorWindow
         string helloMessage = "Hello (no name)";
         if (playerName.Length > 0){
             helloMessage = "Hello " + playerName;
-        }
-
-        EditorGUILayout.LabelField(helloMessage);
-        
+        }        
+        GUILayout.Label(helloMessage);        
         GUILayout.FlexibleSpace();
 
         // text input
